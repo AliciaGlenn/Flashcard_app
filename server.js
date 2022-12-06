@@ -92,6 +92,16 @@ app.get("/flashcards/new", (req, res) => {
 
 // Destroy route - DELETE - DELETES ONE FLASHCARD
 
+app.delete("/flashcards/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id;
+  // delete the flashcards
+  Flashcard.findByIdAndRemove(id, (err, flashcard) => {
+    // redirect user back to index page
+    res.redirect("/flashcards");
+  });
+});
+
 // Update Route - PUT - UPDATES ONE FLASHCARD
 
 // Create route - POST - Creates a flashcard
