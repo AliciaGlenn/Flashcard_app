@@ -1,0 +1,16 @@
+<h1>Create A New Flashcard</h1>
+<form action="/flashcards/<%= flashcard._id%>?_method=PUT" method="post">
+  <input
+    type="text"
+    name="term"
+    placeholder="term"
+    value="<%= flashcard.term%>"
+  />
+  <input
+    type="text"
+    name="definition"
+    placeholder="definition"
+    value="<%= flashcard.definition%>"
+  />
+  <input type="submit" value="Update Flashcard" />
+</form>

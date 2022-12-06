@@ -104,6 +104,16 @@ app.delete("/flashcards/:id", (req, res) => {
 
 // Update Route - PUT - UPDATES ONE FLASHCARD
 
+app.put("/flashcards/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id;
+  // update the flashcards
+  Flashcard.findByIdAndUpdate(id, req.body, { new: true }, (err, flashcard) => {
+    // redirect user back to main page when flashcard
+    res.redirect("/flashcards");
+  });
+});
+
 // Create route - POST - Creates a flashcard
 app.post("/flashcards", (req, res) => {
   // create the new flashcard
@@ -114,6 +124,16 @@ app.post("/flashcards", (req, res) => {
 });
 
 // Edit route - GET - GETS THE EDIT FORM
+
+app.get("/flashcards/:id/edit", (req, res) => {
+  // get the id from params
+  const id = req.params.id;
+  // get the flashcard from the database
+  Flashcard.findById(id, (err, flashcard) => {
+    // render template and send it fruit
+    res.render("edit.ejs", { flashcard });
+  });
+});
 
 // Show route -  GET - GETS ONE FLASHCARD
 app.get("/flashcards/:id", (req, res) => {
