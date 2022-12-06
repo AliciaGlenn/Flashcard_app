@@ -24,6 +24,27 @@ mongoose.connection
   .on("close", () => console.log("Disconnected from Mongoose"))
   .on("error", (error) => console.log(error));
 
+////////////////////////////////////////////////
+// Our Models
+////////////////////////////////////////////////
+// pull schema and model from mongoose
+const { Schema, model } = mongoose;
+
+// make flashcards schema
+const flashcardsSchema = new Schema(
+  {
+    term: { type: String, required: true },
+    definition: String,
+  },
+  { timestamps: true }
+);
+
+// make flashcards model
+const Flashcard = model("Flashcard", flashcardsSchema);
+
+// Export the Flashcards model
+module.exports = Flashcard;
+
 // register middleware
 app.use(morgan("dev"));
 app.use("/static", express.static("public"));
