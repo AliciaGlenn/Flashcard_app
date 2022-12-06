@@ -13,3 +13,4 @@ FLashcard Buddy is the easiest way to study, practice and become an expert in wh
 ![Alt text](wireframes/homepage.png "home page")
 ![Alt text](wireframes/login-dashboard.png "login dashboard")
 ![Alt text](wireframes/practice_page.png "practice page")
+![Alt text](wireframes/erd.png "ERD")
