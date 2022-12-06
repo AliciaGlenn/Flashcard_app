@@ -51,11 +51,70 @@ app.use("/static", express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
+app.get("/flashcards/seed", (req, res) => {
+  // array of starter flashcards
+  const startFlashcards = [
+    { term: "bonjour", definition: "hi" },
+    { term: "manger", definition: "eat" },
+    { term: "enfants", def: "children" },
+  ];
+
+  // Delete all fruits
+  Flashcard.remove({}, (err, data) => {
+    // Seed Starter Fflashcards
+    Flashcard.create(startFlashcards, (err, data) => {
+      // send created flashcards as response to confirm creation
+      res.json(data);
+    });
+  });
+});
+
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
 app.get("/", (req, res) => {
   res.send("your server is running... better catch it.");
+});
+
+//INDUCES
+// index route - GET LIST OF FLASHCARDS
+app.get("/flashcards", (req, res) => {
+  Flashcard.find({}, (err, flashcards) => {
+    res.render("index.ejs", { flashcards });
+  });
+});
+
+// new route - GET - GET THE NEW FORM
+
+app.get("/flashcards/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+// Destroy route - DELETE - DELETES ONE FLASHCARD
+
+// Update Route - PUT - UPDATES ONE FLASHCARD
+
+// Create route - POST - Creates a flashcard
+app.post("/flashcards", (req, res) => {
+  // create the new flashcard
+  Flashcard.create(req.body, (err, flashcard) => {
+    // redirect the user back to the main flashcard page after flashcard created
+    res.redirect("/flashcards");
+  });
+});
+
+// Edit route - GET - GETS THE EDIT FORM
+
+// Show route -  GET - GETS ONE FLASHCARD
+app.get("/flashcards/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id;
+
+  // find the particular flashcard from the database
+  Flashcard.findById(id, (err, flashcard) => {
+    // render the template with the data from the database
+    res.render("show.ejs", { flashcard });
+  });
 });
 
 //////////////////////////////////////////////
