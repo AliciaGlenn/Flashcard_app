@@ -9,28 +9,6 @@ const Flashcard = require("../models/flashcards");
 /////////////////////////////////////////
 const router = express.Router();
 
-/////////////////////////////////////////
-// Routes
-/////////////////////////////////////////
-
-router.get("/seed", (req, res) => {
-  // array of starter flashcards
-  const startFlashcards = [
-    { term: "bonjour", definition: "hi" },
-    { term: "manger", definition: "eat" },
-    { term: "enfants", def: "children" },
-  ];
-
-  // Delete all fruits
-  Flashcard.remove({}, (err, data) => {
-    // Seed Starter Fflashcards
-    Flashcard.create(startFlashcards, (err, data) => {
-      // send created flashcards as response to confirm creation
-      res.json(data);
-    });
-  });
-});
-
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
