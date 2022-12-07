@@ -8,9 +8,24 @@ FLashcard Buddy is the easiest way to study, practice and become an expert in wh
 
 [Trello Board](https://trello.com/invite/b/15lEia0J/ATTI4d3fa41a5d8a2b8bac89ce25f9febd9468A013A2/project-2)
 
+**Tech Used**
+
+HTML
+CSS
+Javascript
+Express JS
+jQuery
+Mongoose
+Bootstrap 5
+EJS
+Node
+Mongoose
+
 ## Mockups
 
 ![Alt text](wireframes/homepage.png "home page")
 ![Alt text](wireframes/login-dashboard.png "login dashboard")
 ![Alt text](wireframes/practice_page.png "practice page")
 ![Alt text](wireframes/erd.png "ERD")
+
+![Alt text](https://project-2-ss0h.onrender.com/ "Flashcard Buddy Website")

@@ -1,0 +1,27 @@
+//////////////////////////////////////////////
+// Import Dependencies
+//////////////////////////////////////////////
+const mongoose = require("./connection");
+
+////////////////////////////////////////////////
+// Our Models
+////////////////////////////////////////////////
+// pull schema and model from mongoose
+const { Schema, model } = mongoose;
+
+// make flashcards schema
+const flashcardsSchema = new Schema(
+  {
+    term: { type: String, required: true },
+    definition: String,
+  },
+  { timestamps: true }
+);
+
+// make flashcards model
+const Flashcard = model("Flashcard", flashcardsSchema);
+
+///////////////////////////////////////////////////
+// Export Model
+///////////////////////////////////////////////////
+module.exports = Flashcard;
