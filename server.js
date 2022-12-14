@@ -7,6 +7,7 @@ const morgan = require("morgan"); //import morgan
 const methodOverride = require("method-override");
 const Flashcard = require("./models/flashcards");
 const FlashcardRouter = require("./controllers/flashcards");
+const UserRouter = require("./controllers/user");
 
 // Create express app
 const app = express();
@@ -17,6 +18,11 @@ app.use("/static", express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use("/flashcards", FlashcardRouter);
+app.use("/user", UserRouter);
+
+app.get("/", (req, res) => {
+  res.render("user/index.ejs");
+});
 
 //////////////////////////////////////////////
 // Server Listener
