@@ -1,10 +1,14 @@
-<%- include("./partials/head.ejs") %>
-<h1>list of flashcards</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
 
-<a href="/flashcards/new"><button>Create a Flashcard</button></a>
-
-<% for (flashcard of flashcards) { %>
-
-<a href="/flashcards/<%= flashcard._id %>"><h2><%= flashcard.term %></h2></a>
-
-<% } %>
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <main>
+      <div>
+        <a href="/user/signup"><button>Signup</button></a>
+        <a href="/user/login"><button>Login</button></a>
+      </div>
+    </main>
+  </body>
+</html>

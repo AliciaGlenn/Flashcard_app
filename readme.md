@@ -16,7 +16,6 @@ Javascript
 Express JS
 jQuery
 Mongoose
-Bootstrap 5
 EJS
 Node
 Mongoose

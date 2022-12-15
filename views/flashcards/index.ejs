@@ -1,0 +1,10 @@
+<%- include("./partials/head.ejs") %>
+<h1>list of flashcards</h1>
+
+<a href="/flashcards/new"><button>Create a Flashcard</button></a>
+
+<% for (flashcard of flashcards) { %>
+
+<a href="/flashcards/<%= flashcard._id %>"><h2><%= flashcard.term %></h2></a>
+
+<% } %>
