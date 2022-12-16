@@ -17,7 +17,8 @@ const router = express.Router();
 // index route - GET LIST OF FLASHCARDS
 router.get("/", (req, res) => {
   Flashcard.find({}, (err, flashcards) => {
-    res.render("index.ejs", { flashcards });
+    res.render("flashcards/index.ejs", { flashcards });
+    console.log(flashcards);
   });
 });
 

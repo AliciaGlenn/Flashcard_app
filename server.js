@@ -21,7 +21,7 @@ app.use("/flashcards", FlashcardRouter);
 app.use("/user", UserRouter);
 
 app.get("/", (req, res) => {
-  res.render("user/index.ejs");
+  res.render("index.ejs");
 });
 
 //////////////////////////////////////////////

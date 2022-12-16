@@ -4,6 +4,7 @@
 const express = require("express");
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
+const Flashcard = require("../models/flashcards");
 
 /////////////////////////////////////////
 // Create Route
@@ -26,7 +27,10 @@ router.post("/signup", async (req, res) => {
     await bcrypt.genSalt(10)
   );
   // create the new user
+  console.log(req.body);
   User.create(req.body, (err, user) => {
+    console.log(err);
+    console.log(user);
     //redirect to login page
     res.redirect("/user/login");
   });
@@ -55,7 +59,6 @@ router.post("/login", (req, res) => {
     }
   });
 });
-
 //////////////////////////////////////////
 // Export the Router
 //////////////////////////////////////////
