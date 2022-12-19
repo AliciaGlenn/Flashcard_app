@@ -3,22 +3,24 @@
   <%- include("../partials/head.ejs") %>
 
   <body>
-    <%- include("../partials/header.ejs") %>
-    <main>
-      <div>
-        <form action="/user/login" method="post">
-          <fieldset>
-            <legend>User Login</legend>
-            <label
-              >USERNAME: <input type="text" name="username" required />
-            </label>
-            <label
-              >PASSWORD: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Login" />
-          </fieldset>
-        </form>
-      </div>
-    </main>
+    <div class="login">
+      <%- include("../partials/header.ejs") %>
+      <main>
+        <div>
+          <form action="/user/login" method="post">
+            <fieldset>
+              <legend style="color: white">User Login</legend>
+              <label style="color: white"
+                >USERNAME: <input type="text" name="username" required />
+              </label>
+              <label style="color: white"
+                >PASSWORD: <input type="password" name="password" required />
+              </label>
+              <input type="submit" value="Login" class="button" />
+            </fieldset>
+          </form>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

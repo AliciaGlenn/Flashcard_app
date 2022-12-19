@@ -1,0 +1,59 @@
+
+.parent {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+    background-image: url(img/flashcardbuddy.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+  
+  .section-coral {
+    padding: 18rem;
+    margin-top: 20rem;
+    grid-column: 2 / 4;
+    margin-left: 20rem;
+
+  }
+  
+  .left-side {
+    grid-column: 1 / 2;
+  }
+  
+  main {
+    grid-column: 2 / 3;
+  }
+  
+  .right-side {
+    grid-column: 3 / 4;
+  }
+  
+  footer {
+    grid-column: 1 / 4;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  
+
+  .login {
+    background-color: rebeccapurple;
+  }
+
+
+/* .box {
+    background-image: url(img/flashcardbuddy.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+
+   } */
